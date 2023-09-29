@@ -1,0 +1,39 @@
+<!-- this code tell us how we can use ReactJS withouting downloaing anything or any liabrary for npm  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Tut</title>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+    <div id="myDiv1">
+        <!-- Hello React -->
+    </div>
+    <div id="myDiv2">
+        <!-- Hello React -->
+    </div>
+
+    <script type="text/babel">
+        function Greet(){
+            const hello = () => {
+                alert('hello');
+            }
+            return <button onClick={hello}>Greet</button>
+        }
+        class Hello extends React.Component{
+            render(){
+                return <div> <Greet /> Reacting With Code</div>
+            }
+        }
+        ReactDOM.render(<Hello />, document.getElementById('myDiv1')); 
+        ReactDOM.render(<Hello />, document.getElementById('myDiv2')); 
+    </script>
+    
+</body>
+</html>
